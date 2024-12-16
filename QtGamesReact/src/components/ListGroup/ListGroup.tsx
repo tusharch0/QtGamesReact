@@ -1,14 +1,28 @@
 import { MouseEvent } from "react";
 import { useState } from "react";
+import styles from './ListGroup.module.css';
+import styled from 'styled-components';
+
+const List = styled.ul`
+list-style: none;
+    padding: 0;
+`
+interface ListItemProp{
+  active : Boolean;
+}
+const ListItem = styled.li<ListItemProp>`
+padding: 5px 0;
+background: ${props => props.active ?'lightblue': 'none'}
+`
 //{items :[], Heading : string }
 interface Props {
   items: string[];
   heading: string;
   //pass function via  props 
-  onSelectItem : (item: string) => void;
+  onSelectItem: (item: string) => void;
 }
 //passing data via props 
-function ListGroup({items ,heading, onSelectItem} : Props) {
+function ListGroup({ items, heading, onSelectItem }: Props) {
   //let items = ["New York", "London", "Tokyo", "paris", "Delhi"];
   //Conditional handler
   const getMessage = () => {
@@ -23,7 +37,7 @@ function ListGroup({items ,heading, onSelectItem} : Props) {
     <>
       <h1 onClick={handleClick}>{heading}</h1>
       {getMessage()}
-      <ul className="list-group">
+      <ul className={[styles.listGroup, styles.container].join(" ")}>
         {items.map((item, index) => (
           <li
             className={
@@ -41,6 +55,22 @@ function ListGroup({items ,heading, onSelectItem} : Props) {
           </li>
         ))}
       </ul>
+      <h1>List 2 with Styled Components</h1>
+      {getMessage()}
+      <List >
+        {items.map((item, index) => (
+          <ListItem
+           active = {index == selectedIndex}
+            key={item}
+            onClick={() => {
+              setSelectedIndex(index);
+              onSelectItem(item);
+            }}
+          >
+            {item}
+          </ListItem>
+        ))}
+      </List>
     </>
   );
 }

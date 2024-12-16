@@ -11,7 +11,7 @@ node modules - third party dependancy
 public - our public files like image video etc are store 
 src - our components 
 
-.tsx - components ( type script xml that compile to vanella js)
+.tsx - components ( type script xml that compile to vanilla js)
 .ts - for normal ts file 
 
 types of components 
@@ -38,3 +38,14 @@ state : data manage by component,  mutable
 
 in any component there is shotcut rafce
 also add react dev tools extention in chrome 
+
+css module help us to same css class name in multiple places 
+[styles.listGroup, styles.container].join(" ")
+
+css in js features 
+scoped , all css js in one place 
+easier to delete 
+easy to style based on props/state 
+(libs :- styleComponents,  Emotion )
+
+npm i styled-components
