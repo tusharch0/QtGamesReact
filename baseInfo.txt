@@ -1,0 +1,40 @@
+create react app (CRA)
+npm create vite@latest or npm create vite@4.1.0
+npm i  // to install all the dependancy 
+npm run dev // to run web server 
+press q to quit 
+to open terminal ctrl+`
+.exit to exit node
+
+structure over view 
+node modules - third party dependancy
+public - our public files like image video etc are store 
+src - our components 
+
+.tsx - components ( type script xml that compile to vanella js)
+.ts - for normal ts file 
+
+types of components 
+function components
+class components (old approch)
+
+react dom help to update only the changes with the help of virtual dom 
+
+React -  library
+
+npm i bootstrap@5.2.3
+cmd + p to switch files 
+
+select Keyword and cmd + d multiple time to select all the same Keyword - multiple select Shortcut 
+
+In react a components cannot return more then one element eg <h1> <ul> so either use div or fragment import { Fragment } from "react"; <Fragment> or <>
+jsx dont have for loop
+
+arror function a function with no parameters ()=> 
+
+prop vs state
+pro : Input pass to a component can be data or function , immutable 
+state : data manage by component,  mutable 
+
+in any component there is shotcut rafce
+also add react dev tools extention in chrome 
