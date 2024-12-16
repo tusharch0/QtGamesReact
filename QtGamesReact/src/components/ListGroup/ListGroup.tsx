@@ -37,7 +37,8 @@ function ListGroup({ items, heading, onSelectItem }: Props) {
     <>
       <h1 onClick={handleClick}>{heading}</h1>
       {getMessage()}
-      <ul className={[styles.listGroup, styles.container].join(" ")}>
+      
+      <ul className={[styles.listGroup, styles.container].join(" ")} style ={{backgroundColor: 'pink',fontSize: 18} /*Inline css */}>
         {items.map((item, index) => (
           <li
             className={

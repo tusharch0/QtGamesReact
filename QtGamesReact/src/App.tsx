@@ -3,6 +3,8 @@ import Alert from "./components/Alert";
 import Button from "./components/Button";
 import ListGroup from "./components/ListGroup";
 import './App.css';
+import { IoCalendarNumber } from "react-icons/io5";
+import Like from "./components/Like";
 function App() {
   let items = ["New York", "London", "Tokyo", "paris", "Delhi"];
   const handleSelectItem = (item: string) => {
@@ -10,6 +12,8 @@ function App() {
   };
   const handleClick = (alert: boolean) => { setAlertVisibility(alert);}
   const [alertVisible, setAlertVisibility ]= useState(false);
+  const [likeActive, setLikeActive]= useState(false);
+  const handleLikeClick = (active: boolean) => {setLikeActive(active)}
   return (
     <div>
       {" "}
@@ -18,6 +22,8 @@ function App() {
         {" "}
         All <span>Working</span> Good{" "}
       </Alert>}
+      <p>Hit a like <Like isActive={likeActive} onclick={handleLikeClick} /></p>
+      <p>React Icon <IoCalendarNumber color="green" size="20"></IoCalendarNumber></p> 
       <ListGroup items={items} heading="city" onSelectItem={handleSelectItem} />
       <Button color="primary" onClick={handleClick} name="Submit"></Button>
     </div>

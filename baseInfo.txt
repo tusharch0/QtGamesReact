@@ -6,6 +6,7 @@ press q to quit
 to open terminal ctrl+`
 .exit to exit node
 
+################################################################################################################
 structure over view 
 node modules - third party dependancy
 public - our public files like image video etc are store 
@@ -32,6 +33,8 @@ jsx dont have for loop
 
 arror function a function with no parameters ()=> 
 
+
+################################################################################################################
 prop vs state
 pro : Input pass to a component can be data or function , immutable 
 state : data manage by component,  mutable 
@@ -42,6 +45,8 @@ also add react dev tools extention in chrome
 css module help us to same css class name in multiple places 
 [styles.listGroup, styles.container].join(" ")
 
+
+################################################################################################################
 css in js features 
 scoped , all css js in one place 
 easier to delete 
@@ -49,3 +54,38 @@ easy to style based on props/state
 (libs :- styleComponents,  Emotion )
 
 npm i styled-components
+Css in Js 
+import styled from 'styled-components';
+
+const List = styled.ul`
+list-style: none;
+    padding: 0;
+`
+interface ListItemProp{
+  active : Boolean;
+}
+const ListItem = styled.li<ListItemProp>`
+padding: 5px 0;
+background: ${props => props.active ?'lightblue': 'none'}
+`
+<List >
+{items.map((item, index) => (
+    <ListItem
+    active = {index == selectedIndex}
+    key={item}
+    onClick={() => {
+        setSelectedIndex(index);
+        onSelectItem(item);
+    }}
+    >
+    {item}
+    </ListItem>
+))}
+</List>
+
+################################################################################################################
+Inline css 
+style ={{backgroundColor: 'pink',fontSize: 18} /*Inline css */}
+
+Adding icons 
+npm i react-icons@4.7.1
